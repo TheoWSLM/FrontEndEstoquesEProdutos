@@ -14,6 +14,8 @@ import { PaginaAjudaComponent } from './page/pagina-ajuda/pagina-ajuda.component
 import { PaginaProdutosComponent } from './page/pagina-produtos/pagina-produtos.component';
 import { PaginaEstoquesComponent } from './page/pagina-estoques/pagina-estoques.component';
 import { PerguntasFrequentesComponent } from './componentes/perguntas-frequentes/perguntas-frequentes.component';
+import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
+import { LogarUsuarioComponent } from './componentes/logar-usuario/logar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { PerguntasFrequentesComponent } from './componentes/perguntas-frequentes
     PaginaAjudaComponent,
     PaginaProdutosComponent,
     PaginaEstoquesComponent,
-    PerguntasFrequentesComponent
+    PerguntasFrequentesComponent,
+    RegistrarUsuarioComponent,
+    LogarUsuarioComponent
   ],
   imports: [
     BrowserModule,
