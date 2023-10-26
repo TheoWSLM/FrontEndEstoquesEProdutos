@@ -16,6 +16,8 @@ import { PaginaEstoquesComponent } from './page/pagina-estoques/pagina-estoques.
 import { PerguntasFrequentesComponent } from './componentes/perguntas-frequentes/perguntas-frequentes.component';
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
 import { LogarUsuarioComponent } from './componentes/logar-usuario/logar-usuario.component';
+import { FormRegistrarProdutoComponent } from './componentes/form-registrar-produto/form-registrar-produto.component';
+import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-produto/form-atualizar-produto.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LogarUsuarioComponent } from './componentes/logar-usuario/logar-usuario
     PaginaEstoquesComponent,
     PerguntasFrequentesComponent,
     RegistrarUsuarioComponent,
-    LogarUsuarioComponent
+    LogarUsuarioComponent,
+    FormRegistrarProdutoComponent,
+    FormAtualizarProdutoComponent
   ],
   imports: [
     BrowserModule,

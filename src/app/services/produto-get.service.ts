@@ -63,3 +63,9 @@ export class ProdutoGetService {
     ];
   }
 }
+
+// this.usuariosService.buscarTodos().subscribe(usuarios => {
+//   this.usuarios = usuarios
+// }, (error) => {
+//   console.log(error);
+// })
