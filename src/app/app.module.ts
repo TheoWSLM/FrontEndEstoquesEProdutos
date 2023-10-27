@@ -18,6 +18,7 @@ import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/regis
 import { LogarUsuarioComponent } from './componentes/logar-usuario/logar-usuario.component';
 import { FormRegistrarProdutoComponent } from './componentes/form-registrar-produto/form-registrar-produto.component';
 import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-produto/form-atualizar-produto.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-prod
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

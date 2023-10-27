@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Produto } from '../interfaces/produto';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -7,65 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class ProdutoGetService {
-  private apiUrl = 'urlget';
- // constructor(private http: HttpClient) { }
+  private apiUrl = 'http://localhost:8080/api/produtos';
 
-  listaDeProdutos() {
-    return [
-      {
-        id: 1,
-        nome: 'Produto 1',
-        descricao: 'Descrição do Produto 1',
-        preco: 99.99
-      },
-      {
-        id: 2,
-        nome: 'Produto 2',
-        descricao: 'Descrição do Produto 2',
-        preco: 99.99
-      },
-      {
-        id: 3,
-        nome: 'Produto 3',
-        descricao: 'Descrição do Produto 3',
-        preco: 99.99
-      },
-      {
-        id: 4,
-        nome: 'Produto 4',
-        descricao: 'Descrição do Produto 4',
-        preco: 99.99
-      },
-      {
-        id: 1,
-        nome: 'Produto 1',
-        descricao: 'Descrição do Produto 1',
-        preco: 99.99
-      },
-      {
-        id: 2,
-        nome: 'Produto 2',
-        descricao: 'Descrição do Produto 2',
-        preco: 99.99
-      },
-      {
-        id: 3,
-        nome: 'Produto 3',
-        descricao: 'Descrição do Produto 3',
-        preco: 99.99
-      },
-      {
-        id: 4,
-        nome: 'Produto 4',
-        descricao: 'Descrição do Produto 4',
-        preco: 99.99
-      },
-    ];
+  constructor(private http: HttpClient) { }
+
+  getProdutos(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.apiUrl);
   }
 }
-
-// this.usuariosService.buscarTodos().subscribe(usuarios => {
-//   this.usuarios = usuarios
-// }, (error) => {
-//   console.log(error);
-// })

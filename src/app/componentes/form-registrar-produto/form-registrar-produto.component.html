@@ -1,27 +1,31 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Cadastrar produto</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrarModal" data-bs-whatever="@getbootstrap">Cadastrar produto</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="registrarModal" tabindex="-1" aria-labelledby="registrarModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar produto</h1>
+        <h1 class="modal-title fs-5" id="registrarModalLabel">Cadastrar produto</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form #formRegister="ngForm">
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Nome</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label ">Nome</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="produto.nome" name="nome" />
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="recipient-preco" class="col-form-label">Preço</label>
+            <input type="text" class="form-control" id="recipient-preco" [(ngModel)]="produto.preco" name="preco"/>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Código de barras:</label>
+            <input type="text" class="form-control" id="recipient-codigoBarras" [(ngModel)]="produto.codigoBarras" name="codigoBarras"/>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Cadastrar</button>
+        <button type="button" class="btn btn-primary" (click)="submit()">Cadastrar</button>
       </div>
     </div>
   </div>
