@@ -8,24 +8,24 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form #formRegister="ngForm">
+        <form [formGroup]="produtoForm" (submit)="submit()">
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label ">Nome</label>
-            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="produto.nome" name="nome" />
+            <input type="text" class="form-control" id="recipient-name" formControlName="nome" />
           </div>
           <div class="mb-3">
             <label for="recipient-preco" class="col-form-label">Preço</label>
-            <input type="text" class="form-control" id="recipient-preco" [(ngModel)]="produto.preco" name="preco"/>
+            <input type="text" class="form-control" id="recipient-preco" formControlName="preco"/>
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Código de barras:</label>
-            <input type="text" class="form-control" id="recipient-codigoBarras" [(ngModel)]="produto.codigoBarras" name="codigoBarras"/>
+            <input type="text" class="form-control" id="recipient-codigoBarras" formControlName="codigoBarras"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Cadastrar</button>
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary" (click)="submit()">Cadastrar</button>
       </div>
     </div>
   </div>

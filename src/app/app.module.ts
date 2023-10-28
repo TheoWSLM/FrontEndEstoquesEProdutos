@@ -17,7 +17,8 @@ import { PerguntasFrequentesComponent } from './componentes/perguntas-frequentes
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
 import { LogarUsuarioComponent } from './componentes/logar-usuario/logar-usuario.component';
 import { FormRegistrarProdutoComponent } from './componentes/form-registrar-produto/form-registrar-produto.component';
-import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-produto/form-atualizar-produto.component';
+import { ReactiveFormsModule } from '@angular/forms';
+// import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-produto/form-atualizar-produto.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -36,13 +37,14 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrarUsuarioComponent,
     LogarUsuarioComponent,
     FormRegistrarProdutoComponent,
-    FormAtualizarProdutoComponent
+    // FormAtualizarProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

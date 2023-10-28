@@ -1,9 +1,7 @@
 <div class="row row-cols-1 justify-content-center align-items-center g-4">
 <div class="card mx-3" style="width: 18rem;" *ngFor="let produto of produtos">
-    <!-- <img src="https://picsum.photos/180/140?random=" class="rounded" alt="..."> -->
     <div class="card-body" [id]="produto.id">
       <h5 class="card-title">{{produto.nome}}</h5>
-      <!-- <p class="card-text">{{produto.descricao}}</p> -->
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Preço: {{produto.preco}}</li>
@@ -11,9 +9,50 @@
     </ul>
     <div class="card-body d-flex justify-content-center align-items-center">
       <div class="mx-2">
-      <app-form-atualizar-produto [produtoId]="produto.id"/>
+        <button type="button" id="button" class="btn btn-warning" data-bs-toggle="modal" (click)="getProduto(produto)" data-bs-target="#atualizeModal">Atualizar</button>
+
     </div>
       <button type="button" class="btn btn-danger" (click)="excluir(produto.id)">Deletar</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="atualizeModal" tabindex="-1" aria-labelledby="atualizeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="atualizeModalLabel">Atualizar produto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label ">Nome</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="this.produto.nome" name="name"/>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Preço</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="produto.preco" name="preco"/>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Codigo de barras</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="produto.codigoBarras" name="codigoBarras"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" (click)="submit()" data-bs-dismiss="modal">Atualizar</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
