@@ -13,7 +13,7 @@
       <div class="mx-2">
       <app-form-atualizar-produto [produtoId]="produto.id"/>
     </div>
-      <button type="button" class="btn btn-danger">Deletar</button>
+      <button type="button" class="btn btn-danger" (click)="excluir(produto.id)">Deletar</button>
     </div>
   </div>
 </div>

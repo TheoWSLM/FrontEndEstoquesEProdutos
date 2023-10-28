@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { ProdutoGetService } from '../../services/produto-get.service'
 import { Produto } from 'src/app/interfaces/produto';
 import { Subscription } from 'rxjs';
+import { ProdutoDeleteService } from 'src/app/services/produto-delete.service';
 
 
 @Component({
@@ -14,10 +15,23 @@ export class CardProductComponent {
   error: Error[] = [];
   private produtosSubscription: Subscription | undefined;
   
-  constructor(private produtoService: ProdutoGetService) { }
+  constructor(private produtoGetService: ProdutoGetService, private produtoDeleteService: ProdutoDeleteService) { }
+
+  excluir(id: number) {
+    this.produtoDeleteService.deleteProduto(id).subscribe(
+      (response) => {
+        if (response.status === 204) {
+          console.log('Produto excluído com sucesso.');
+        } else {
+          console.log('Erro ao excluir o produto. Código de status:', response.status);
+        }
+      },
+    );
+  }
+  
 
   ngOnInit(): void {
-    this.produtosSubscription = this.produtoService.getProdutos().subscribe(
+    this.produtosSubscription = this.produtoGetService.getProdutos().subscribe(
       (produtos) => {
         this.produtos = produtos;
       },
