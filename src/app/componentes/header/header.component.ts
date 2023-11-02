@@ -6,15 +6,4 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  @Output() mostrarFormularioLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() mostrarFormularioRegistrar: EventEmitter<boolean> = new EventEmitter<boolean>();
- 
-  formularioLoginAtivado() {
-    this.mostrarFormularioLogin.emit(true);
-  }
-
-  formularioRegistrarAtivado() {
-    this.mostrarFormularioRegistrar.emit(true);
-  }
-  
 }
