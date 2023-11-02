@@ -15,8 +15,8 @@ import { PerguntasFrequentesComponent } from './componentes/perguntas-frequentes
 import { FormRegistrarProdutoComponent } from './componentes/form-registrar-produto/form-registrar-produto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyMaskModule } from "ng2-currency-mask";
-// import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-produto/form-atualizar-produto.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListaDeProdutosComponent } from './componentes/lista-de-produtos/lista-de-produtos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     PaginaProdutosComponent,
     PerguntasFrequentesComponent,
     FormRegistrarProdutoComponent,
-    // FormAtualizarProdutoComponent
+    ListaDeProdutosComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,5 +2,14 @@
 <p class="text-uppercase">
     Aqui estão os seus produtos!</p>
    <app-form-registrar-produto/>
+   <button type="button" (click)="alternarLista()" class="btn btn-info">Alternar</button>
+
 </div>
-<app-card-product/>
+
+<ng-container *ngIf="(modoCardsObservable$ | async) else listaProdutos">
+    <app-card-product></app-card-product>
+  </ng-container>
+  <ng-template #listaProdutos>
+    <app-lista-de-produtos [produtos]="produtos"></app-lista-de-produtos>
+  </ng-template>
+  
