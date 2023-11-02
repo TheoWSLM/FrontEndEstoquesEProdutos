@@ -18,9 +18,9 @@ constructor(private produtoPostService: ProdutoPostService) {}
 
 produtoForm = new FormGroup({
   id: new FormControl(0, Validators.required),
-  nome: new FormControl('', Validators.required),
-  codigoBarras: new FormControl('', Validators.required),
-  preco: new FormControl(0, Validators.required)
+  nome: new FormControl( '',[ Validators.required, Validators.maxLength(50)]),
+  codigoBarras: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+  preco: new FormControl(0, [Validators.required, Validators.min(0)])
 });
 
 submit(){
@@ -40,5 +40,12 @@ submit(){
   }
 );
 }
+
+ngOnDestroy() {
+  if (this.produtosSubscription) {
+    this.produtosSubscription.unsubscribe();
+  }
+}
+
 }
 
