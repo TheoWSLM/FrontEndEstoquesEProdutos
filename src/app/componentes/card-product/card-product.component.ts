@@ -26,7 +26,7 @@ export class CardProductComponent {
     id: new FormControl(this.produto.id, Validators.required),
     nome: new FormControl(this.produto.nome,[ Validators.required, Validators.maxLength(50)]),
     codigoBarras: new FormControl(this.produto.codigoBarras, [Validators.required, Validators.maxLength(20)]),
-    preco: new FormControl(this.produto.preco, [Validators.required, Validators.min(0)])
+    preco: new FormControl(this.produto.preco, [Validators.required, Validators.min(0), Validators.pattern('^[0-9]*$')])
   });
   
   excluir(id: number) {

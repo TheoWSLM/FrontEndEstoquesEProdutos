@@ -14,6 +14,7 @@ import { PaginaProdutosComponent } from './page/pagina-produtos/pagina-produtos.
 import { PerguntasFrequentesComponent } from './componentes/perguntas-frequentes/perguntas-frequentes.component';
 import { FormRegistrarProdutoComponent } from './componentes/form-registrar-produto/form-registrar-produto.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 // import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-produto/form-atualizar-produto.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CurrencyMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
