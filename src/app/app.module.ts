@@ -9,13 +9,9 @@ import { PaginaInicialComponent } from './page/pagina-inicial/pagina-inicial.com
 import { CarrosselComponent } from './componentes/carrossel/carrossel.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { CardProductComponent } from './componentes/card-product/card-product.component';
-import { CardStorageComponent } from './componentes/card-storage/card-storage.component';
 import { PaginaAjudaComponent } from './page/pagina-ajuda/pagina-ajuda.component';
 import { PaginaProdutosComponent } from './page/pagina-produtos/pagina-produtos.component';
-import { PaginaEstoquesComponent } from './page/pagina-estoques/pagina-estoques.component';
 import { PerguntasFrequentesComponent } from './componentes/perguntas-frequentes/perguntas-frequentes.component';
-import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
-import { LogarUsuarioComponent } from './componentes/logar-usuario/logar-usuario.component';
 import { FormRegistrarProdutoComponent } from './componentes/form-registrar-produto/form-registrar-produto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 // import { FormAtualizarProdutoComponent } from './componentes/form-atualizar-produto/form-atualizar-produto.component';
@@ -29,13 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     CarrosselComponent,
     FooterComponent,
     CardProductComponent,
-    CardStorageComponent,
     PaginaAjudaComponent,
     PaginaProdutosComponent,
-    PaginaEstoquesComponent,
     PerguntasFrequentesComponent,
-    RegistrarUsuarioComponent,
-    LogarUsuarioComponent,
     FormRegistrarProdutoComponent,
     // FormAtualizarProdutoComponent
   ],
