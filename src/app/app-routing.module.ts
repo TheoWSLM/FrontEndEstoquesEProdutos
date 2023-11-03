@@ -7,6 +7,7 @@ import { CadastrarProdutoComponent } from './page/cadastrar-produto/cadastrar-pr
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
 { path: 'inicio', component: PaginaInicialComponent}, 
 { path: 'ajuda', component: PaginaAjudaComponent},
 { path: 'produtos', component: PaginaProdutosComponent},
