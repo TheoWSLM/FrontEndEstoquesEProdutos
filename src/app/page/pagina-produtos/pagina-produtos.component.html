@@ -1,15 +1,36 @@
-<div class="d-flex flex-column justify-content-center align-items-center mt-4 mb-4">
-<p class="text-uppercase">
-    Aqui estão os seus produtos!</p>
-   <app-form-registrar-produto/>
-   <button type="button" (click)="alternarLista()" class="btn btn-info">Alternar</button>
 
-</div>
+  <div class="row mb-4 mt-4">
+    <div class="col">
+      <p class="text-uppercase">
+        Aqui estão os seus produtos!</p>
+    
+    </div>
+    <div class="col-md-auto">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+      data-bs-target="#registrarModal" data-bs-whatever="@getbootstrap"  >Cadastrar produto</button>
+  
+    </div>
+    <div class="col col-lg-1">
+      <button type="button" (click)="alternarLista()" class="btn btn-info">Alternar</button>
+    </div>
+  </div>
 
-<ng-container *ngIf="(modoCardsObservable$ | async) else listaProdutos">
-    <app-card-product></app-card-product>
-  </ng-container>
-  <ng-template #listaProdutos>
-    <app-lista-de-produtos [produtos]="produtos"></app-lista-de-produtos>
-  </ng-template>
+
+    <app-card-product [produtos]="produtos" [modoExibir]="modoExibir" ></app-card-product>
+
+   
+    <div class="modal fade" (hidden.bs.modal)="atualizar()" id="registrarModal" tabindex="-1" aria-labelledby="registrarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="registrarModalLabel">Cadastrar produto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <app-form-registrar-produto/>
+            </div>
+          </div>
+        </div>
+      </div>
+
   
