@@ -17,3 +17,7 @@
   background-color: rgba(0, 0, 0, 0.445); 
   z-index: 2000; 
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
