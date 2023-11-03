@@ -1,15 +1,38 @@
 <form [formGroup]="produtoForm" (submit)="submit()">
   <div class="mb-3">
-    <label for="recipient-name" class="col-form-label ">Nome</label>
+    <label for="recipient-name"(click)="teste()" class="col-form-label ">Nome*</label>
     <input type="text" class="form-control" placeholder="Digite o nome do produto" id="recipient-name" formControlName="nome" />
+    <div *ngIf="produtoForm.get('nome')?.hasError('required') && produtoForm.get('nome')?.touched">
+      {{ errorMessages.required }}
+    </div>
+    <div *ngIf="produtoForm.get('nome')?.hasError('maxlength') && produtoForm.get('nome')?.touched">
+      {{ errorMessages.maxLength }}
+    </div>
+    
   </div>
   <div class="mb-3">
     <label for="recipient-preco" class="col-form-label">Preço</label>
     <input type="text" currencyMask [options]="{ align: 'left', prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="recipient-preco" formControlName="preco"/>
+    <div *ngIf="produtoForm?.get('preco')?.hasError('required') && produtoForm.get('preco')?.touched">
+      {{ errorMessages.required }}
+    </div>
+    <div *ngIf="produtoForm.get('preco')?.hasError('min') && produtoForm.get('preco')?.touched">
+      {{ errorMessages.min }}
+    </div>
+    <div *ngIf="produtoForm.get('preco')?.hasError('pattern') && produtoForm.get('preco')?.touched">
+      {{ errorMessages.pattern }}
+    </div>
   </div>
   <div class="mb-3">
-    <label for="message-text" class="col-form-label">Código de barras:</label>
+    <label for="message-text" class="col-form-label">Código de barras*</label>
     <input type="text" placeholder="Digite o código de barras do produto" class="form-control" id="recipient-codigoBarras" formControlName="codigoBarras"/>
+    <div *ngIf="produtoForm?.get('codigoBarras')?.hasError('required') && produtoForm.get('codigoBarras')?.touched">
+      {{ errorMessages.required }}
+    </div>
+    <div *ngIf="produtoForm.get('codigoBarras')?.hasError('maxlength') && produtoForm.get('codigoBarras')?.touched">
+      {{ errorMessages.maxLength }}
+    </div>
+  
   </div>
   <div class="modal-footer">
     <button type="button" *ngIf="ativarBotao" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

@@ -19,9 +19,16 @@ export class CardProductComponent {
   private produtosSubscription: Subscription | undefined;
   modoAtual: boolean = false;
 
+  errorMessages = {
+    required: 'Este campo é obrigatório.',
+    maxLength: 'O valor inserido é maior que o limite de caracteres',
+    min: 'O valor deve ser maior que 0.',
+    pattern: 'Formato inválido. Use um número válido com até duas casas decimais.'
+  };
+  
   produtoForm = new FormGroup({
     id: new FormControl(this.produto.id, Validators.required),
-    nome: new FormControl(this.produto.nome, [Validators.required, Validators.maxLength(50)]),
+    nome: new FormControl(this.produto.nome, [Validators.required, Validators.maxLength(100)]),
     codigoBarras: new FormControl(this.produto.codigoBarras, [Validators.required, Validators.maxLength(20)]),
     preco: new FormControl(this.produto.preco, [Validators.required, Validators.min(0), Validators.pattern('^[0-9]+([,.][0-9]{1,2})?$')])
   });
@@ -51,8 +58,8 @@ export class CardProductComponent {
       text: 'Essa ação é definitiva',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#0d6efd',
+      cancelButtonColor: '#dc3545',
       confirmButtonText: 'Sim, deletar'
     }).then((result) => {
       if (result.isConfirmed) {
