@@ -1,27 +1,50 @@
-# ProjetoTreinamento
+<h3>Gerenciamento de Produtos</h3>
+ <p>
+Este é um sistema de gerenciamento que permite ao usuário adicionar, editar e excluir produtos de forma eficiente. O sistema é projetado para simplificar a gestão de produtos, melhorando a organização e facilitando a tomada de decisões.
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+<p>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
+</p>
+  
+### :hammer: Construído com
+* [![Angular][Angular.io]][Angular-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
-## Development server
+## 🎇 Como funciona
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h3>Adição de Produtos:</h3>
+<p> ➕ Adicione novos produtos ao estoque fornecendo informações como nome, preço e código.</p>
+<h3>Edição de Produtos:</h3>
+<p> 📝 Atualize as informações dos produtos existentes.</p>
+<h3> 🗑️ Exclusão de Produtos:</h3> <p>Remova produtos que não são mais necessários do sistema.</p>
 
-## Code scaffolding
+### ⏬ Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Com a aplicação Backend de produtos e estoques devidamente configurada e pronta para uso.
+2. Clone o repositorio
+   sh
+   git clone https://github.com/TheoWSLM/projeto-treinamento.git
+   
+3. Instale os pacotes NPM
+4. sh
+   npm install
+   
+5. Execute a API e o projeto angular
+   
 
-## Build
+## :arrow_forward: Uso
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## 📧 Contato
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Theo Weber - theoweber1@gmail.com
 
-## Running end-to-end tests
+## ❤️ Agradecimentos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Instrutor Rafael Ferreira
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Angular-url]: https://angular.io/
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
