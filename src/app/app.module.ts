@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { HttpClientModule } from '@angular/common/http';
 import { CadastrarProdutoComponent } from './page/cadastrar-produto/cadastrar-produto.component';
+import { AtualizarProdutoComponent } from './page/atualizar-produto/atualizar-produto.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CadastrarProdutoComponent } from './page/cadastrar-produto/cadastrar-pr
     PerguntasFrequentesComponent,
     FormRegistrarProdutoComponent,
     CadastrarProdutoComponent,
+    AtualizarProdutoComponent,
   ],
   imports: [
     BrowserModule,
