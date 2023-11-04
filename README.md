@@ -14,7 +14,7 @@ Este é um sistema de gerenciamento que permite ao usuário adicionar, editar e 
 ## 🎇 Como funciona
 
 <h3>Adição de Produtos:</h3>
-<p> ➕ Adicione novos produtos ao estoque fornecendo informações como nome, preço e código.</p>
+<p> ➕ Adicione novos produtos ao estoque fornecendo informações como nome, preço e código de barras.</p>
 <h3>Edição de Produtos:</h3>
 <p> 📝 Atualize as informações dos produtos existentes.</p>
 <h3> 🗑️ Exclusão de Produtos:</h3> <p>Remova produtos que não são mais necessários do sistema.</p>
@@ -34,6 +34,11 @@ Este é um sistema de gerenciamento que permite ao usuário adicionar, editar e 
    
 
 ## :arrow_forward: Uso
+
+
+
+https://github.com/TheoWSLM/projeto-treinamento/assets/130668057/4f0717ad-fe72-43ef-8c94-880c77b35177
+
 
 
 ## 📧 Contato
