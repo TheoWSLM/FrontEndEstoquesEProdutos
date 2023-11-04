@@ -3,8 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Produto } from 'src/app/interfaces/produto';
+import { AvisoService } from 'src/app/services/aviso.service';
 import { ProdutoService } from 'src/app/services/produto-service.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-registrar-produto',
@@ -12,11 +12,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./form-registrar-produto.component.css']
 })
 export class FormRegistrarProdutoComponent {
-  private produtosSubscription: Subscription | undefined;
+  private produtoInscrito: Subscription | undefined;
   produto: Produto = { id: 0, nome: '', codigoBarras: '', preco: 0 };
   ativarBotao: boolean = false;
   
-  constructor(private produtoService: ProdutoService, private router: Router) {
+  constructor(private produtoService: ProdutoService, private router: Router, private avisoService: AvisoService) {
     this.ativarBotao = this.router.url !== '/registrar/produtos';
   }
 
@@ -38,30 +38,19 @@ export class FormRegistrarProdutoComponent {
     console.log()
     console.log(this.produtoForm.value)
    const  produto:Produto = this.produtoForm.value as Produto; 
-    this.produtosSubscription = this.produtoService.postProduto(produto).subscribe(
+    this.produtoInscrito = this.produtoService.postProduto(produto).subscribe(
         (produtoAdicionado) => {
-      console.log('Produto adicionado com sucesso:', produtoAdicionado);
-      Swal.fire("Produto cadastrado com sucesso!",
-      "Confira no gerenciamento de estoque",
-      "success");
+      this.avisoService.sucesso('Produto cadastrado com sucesso!', 'Confira no gerenciamento de estoque');
     },
     (error) => {
-      console.error('Erro ao adicionar produto:', error);
-      Swal.fire("Ocorreu um erro ao cadastrar!",
-      error.message,
-      "error");
+      this.avisoService.erro('Ocorreu um erro ao cadastrar!', error.message);
     }
   );
   }
 
-  teste(){
-    const precoControl = this.produtoForm.get('nome');
-    console.log('Erros de validação do campo nome:', precoControl?.errors);
-  }
-  
   ngOnDestroy() {
-    if (this.produtosSubscription) {
-      this.produtosSubscription.unsubscribe();
+    if (this.produtoInscrito) {
+      this.produtoInscrito.unsubscribe();
     }
   }
 }

@@ -5,7 +5,6 @@ import { PaginaAjudaComponent } from './page/pagina-ajuda/pagina-ajuda.component
 import { PaginaProdutosComponent } from './page/pagina-produtos/pagina-produtos.component';
 import { CadastrarProdutoComponent } from './page/cadastrar-produto/cadastrar-produto.component';
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
 { path: 'inicio', component: PaginaInicialComponent}, 

@@ -12,15 +12,22 @@ export class PaginaProdutosComponent {
   produtos: Produto[] = [];
   error: Error[] = [];
   modoExibir: boolean = true;
-  private produtosSubscription: Subscription | undefined;
+  private produtoInscrito: Subscription | undefined;
   constructor(private produtoGetService: ProdutoGetService) {}
 
   ngOnInit(): void {
     this.atualizar();
 }
 
+ngOnDestroy(): void {
+  if (this.produtoInscrito) {
+    this.produtoInscrito.unsubscribe();
+  
+}
+}
+
 atualizar(){
-    this.produtosSubscription = this.produtoGetService.getProdutos().subscribe(
+    this.produtoInscrito = this.produtoGetService.getProdutos().subscribe(
       (produtos) => {
         this.produtos = produtos;
       },
