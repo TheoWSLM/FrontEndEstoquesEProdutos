@@ -15,7 +15,6 @@ export class CardProductComponent {
   produto: Produto = { id: 0, nome: '', codigoBarras: '', preco: 0 };
   @Input() produtos: Produto[] = [];
   @Input() modoExibir: boolean = true;
-  error: Error[] = [];
   private produtosSubscription: Subscription | undefined;
   modoAtual: boolean = false;
 
@@ -61,7 +60,6 @@ export class CardProductComponent {
         this.produtoService.deleteProduto(id).subscribe(
           (response) => {
             if (response.status === 204) {
-              console.log('Produto excluído com sucesso!');
               this.avisoService.sucesso('Produto excluído com sucesso.', response.statusText);
               this.atualizar();
             } else {
@@ -81,12 +79,11 @@ export class CardProductComponent {
     const produto: Produto = this.produtoForm.value as Produto;
     this.produtosSubscription = this.produtoService.updateProduto(produto).subscribe(
       (produtoAtualizado) => {
-        console.log('Produto atualizado com sucesso:', produtoAtualizado);
         this.avisoService.sucesso("Produto atualizado com sucesso!", produtoAtualizado.nome);
         this.atualizar();
       },
       (error) => {
-        this.avisoService.erro('Erro ao atualizar o produto', `Status da requisição: ${error.status}`);    
+        this.avisoService.erro('Erro ao atualizar o produto', 'Verifique sua conexão com a internet e tente novamente');    
       }
     );
   }
@@ -97,8 +94,7 @@ export class CardProductComponent {
         this.produtos = produtos;
       },
       (error) => {
-        this.error.push(error);
-        console.log(error);
+        this.avisoService.erro('Erro ao atualizar o produto', 'Verifique sua conexão com a internet e tente novamente');
       }
     );
   }

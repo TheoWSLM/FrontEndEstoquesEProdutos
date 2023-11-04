@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Subscription } from 'rxjs';
 import { Produto } from 'src/app/interfaces/produto';
+import { AvisoService } from 'src/app/services/aviso.service';
 import { ProdutoGetService } from 'src/app/services/produto-get.service';
 
 @Component({
@@ -10,10 +11,9 @@ import { ProdutoGetService } from 'src/app/services/produto-get.service';
 })
 export class PaginaProdutosComponent {
   produtos: Produto[] = [];
-  error: Error[] = [];
   modoExibir: boolean = true;
   private produtoInscrito: Subscription | undefined;
-  constructor(private produtoGetService: ProdutoGetService) {}
+  constructor(private produtoGetService: ProdutoGetService,private avisoService: AvisoService) {}
 
   ngOnInit(): void {
     this.atualizar();
@@ -32,8 +32,7 @@ atualizar(){
         this.produtos = produtos;
       },
       (error) => {
-        this.error.push(error);
-        console.log(error);
+        this.avisoService.erro('Erro ao atualizar o produto', 'Verifique sua conexão com a internet e tente novamente');
       }
     );
   }

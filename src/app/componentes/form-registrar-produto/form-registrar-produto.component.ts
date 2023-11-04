@@ -35,15 +35,13 @@ export class FormRegistrarProdutoComponent {
   });
   
   submit(){
-    console.log()
-    console.log(this.produtoForm.value)
    const  produto:Produto = this.produtoForm.value as Produto; 
     this.produtoInscrito = this.produtoService.postProduto(produto).subscribe(
         (produtoAdicionado) => {
       this.avisoService.sucesso('Produto cadastrado com sucesso!', 'Confira no gerenciamento de estoque');
     },
     (error) => {
-      this.avisoService.erro('Ocorreu um erro ao cadastrar!', 'Tente novamente');
+      this.avisoService.erro('Ocorreu um erro ao cadastrar!', 'Verifique sua conexão com a internet e tente novamente');
     }
   );
   }
