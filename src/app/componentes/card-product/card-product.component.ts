@@ -61,8 +61,8 @@ export class CardProductComponent {
         this.produtoService.deleteProduto(id).subscribe(
           (response) => {
             if (response.status === 204) {
-              console.log('Produto excluído com sucesso.');
-              this.avisoService.sucesso('Produto cadastrado com sucesso!', response.statusText);
+              console.log('Produto excluído com sucesso!');
+              this.avisoService.sucesso('Produto excluído com sucesso.', response.statusText);
               this.atualizar();
             } else {
               this.avisoService.erro('Ocorreu um erro ao cadastrar!', response.statusText);

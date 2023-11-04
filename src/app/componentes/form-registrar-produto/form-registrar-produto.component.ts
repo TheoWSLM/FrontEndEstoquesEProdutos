@@ -43,7 +43,7 @@ export class FormRegistrarProdutoComponent {
       this.avisoService.sucesso('Produto cadastrado com sucesso!', 'Confira no gerenciamento de estoque');
     },
     (error) => {
-      this.avisoService.erro('Ocorreu um erro ao cadastrar!', error.message);
+      this.avisoService.erro('Ocorreu um erro ao cadastrar!', 'Tente novamente');
     }
   );
   }
