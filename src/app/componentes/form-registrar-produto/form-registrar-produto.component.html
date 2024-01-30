@@ -1,11 +1,11 @@
-<form [formGroup]="produtoForm" (submit)="submit()">
+<form [formGroup]="estoqueForm" (submit)="submit()">
   <div class="mb-3">
     <label for="recipient-name" class="col-form-label ">Nome*</label>
     <input type="text" class="form-control" placeholder="Digite o nome do produto" id="recipient-name" formControlName="nome" />
-    <div *ngIf="produtoForm.get('nome')?.hasError('required') && produtoForm.get('nome')?.touched">
+    <div *ngIf="estoqueForm.get('nome')?.hasError('required') && estoqueForm.get('nome')?.touched">
       {{ errorMessages.required }}
     </div>
-    <div *ngIf="produtoForm.get('nome')?.hasError('maxlength') && produtoForm.get('nome')?.touched">
+    <div *ngIf="estoqueForm.get('nome')?.hasError('maxlength') && estoqueForm.get('nome')?.touched">
       {{ errorMessages.maxLength }}
     </div>
     
@@ -13,29 +13,41 @@
   <div class="mb-3">
     <label for="recipient-preco" class="col-form-label">Preço</label>
     <input type="text" currencyMask [options]="{ align: 'left', prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="recipient-preco" formControlName="preco"/>
-    <div *ngIf="produtoForm?.get('preco')?.hasError('required') && produtoForm.get('preco')?.touched">
+    <div *ngIf="estoqueForm?.get('preco')?.hasError('required') && estoqueForm.get('preco')?.touched">
       {{ errorMessages.required }}
     </div>
-    <div *ngIf="produtoForm.get('preco')?.hasError('min') && produtoForm.get('preco')?.touched">
+    <div *ngIf="estoqueForm.get('preco')?.hasError('min') && estoqueForm.get('preco')?.touched">
       {{ errorMessages.min }}
     </div>
-    <div *ngIf="produtoForm.get('preco')?.hasError('pattern') && produtoForm.get('preco')?.touched">
+    <div *ngIf="estoqueForm.get('preco')?.hasError('pattern') && estoqueForm.get('preco')?.touched">
       {{ errorMessages.pattern }}
     </div>
   </div>
   <div class="mb-3">
     <label for="message-text" class="col-form-label">Código de barras*</label>
     <input type="text" placeholder="Digite o código de barras do produto" class="form-control" id="recipient-codigoBarras" formControlName="codigoBarras"/>
-    <div *ngIf="produtoForm?.get('codigoBarras')?.hasError('required') && produtoForm.get('codigoBarras')?.touched">
+    <div *ngIf="estoqueForm?.get('codigoBarras')?.hasError('required') && estoqueForm.get('codigoBarras')?.touched">
       {{ errorMessages.required }}
     </div>
-    <div *ngIf="produtoForm.get('codigoBarras')?.hasError('maxlength') && produtoForm.get('codigoBarras')?.touched">
+    <div *ngIf="estoqueForm.get('codigoBarras')?.hasError('maxlength') && estoqueForm.get('codigoBarras')?.touched">
       {{ errorMessages.maxLength }}
     </div>
-  
   </div>
+
+  
+  <div class="mb-3">
+    <label for="message-text" class="col-form-label">Quantidade*</label>
+    <input type="text" placeholder="Digite a quantidade em estoque" class="form-control" id="recipient-quantidade" formControlName="quantidade"/>
+    <div *ngIf="estoqueForm?.get('quantidade')?.hasError('required') && estoqueForm.get('quantidade')?.touched">
+      {{ errorMessages.required }}
+    </div>
+    <div *ngIf="estoqueForm.get('quantidade')?.hasError('maxlength') && estoqueForm.get('quantidade')?.touched">
+      {{ errorMessages.maxLength }}
+    </div>
+  </div>
+
   <div class="modal-footer">
-    <button type="button" *ngIf="ativarBotao" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-    <button type="submit" class="btn btn-primary" [disabled]="!produtoForm.valid">Cadastrar</button>
+    <button type="button" *ngIf="ativarBotao" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Fechar</button>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!estoqueForm.valid">Cadastrar</button>
   </div>
 </form>

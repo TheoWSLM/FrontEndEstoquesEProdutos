@@ -10,7 +10,7 @@ export class ProdutoDeleteService {
 
   constructor(private http: HttpClient) { }
 
-  deleteProduto(produtoId: number): Observable<HttpResponse<Object>> {
+  deleteProduto(produtoId: string): Observable<HttpResponse<Object>> {
     const apiUrl = `${'http://localhost:8080/api/produtos'}/${produtoId}`;
     
     return this.http.delete(apiUrl, { observe: 'response' });

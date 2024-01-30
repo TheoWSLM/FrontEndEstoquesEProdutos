@@ -12,7 +12,7 @@ import { AvisoService } from 'src/app/services/aviso.service';
   styleUrls: ['./card-product.component.css']
 })
 export class CardProductComponent {
-  produto: Produto = { id: 0, nome: '', codigoBarras: '', preco: 0 };
+  produto: Produto = { id: '', nome: '', codigoBarras: '', preco: 0 };
   @Input() produtos: Produto[] = [];
   @Input() modoExibir: boolean = true;
   private produtosSubscription: Subscription | undefined;
@@ -51,7 +51,7 @@ export class CardProductComponent {
     }
   }
 
-  excluir(id: number) {
+  excluir(id: string) {
     this.avisoService.confirmarExcluir(
       'Você tem certeza que deseja remover esse produto?',
       'Essa ação é definitiva'

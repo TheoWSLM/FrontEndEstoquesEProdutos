@@ -3,7 +3,6 @@ import { ProdutoGetService } from './produto-get.service';
 import { ProdutoDeleteService } from './produto-delete.service';
 import { ProdutoPutService } from './produto-put.service';
 import { Produto } from '../interfaces/produto';
-import { ProdutoPostService } from './produto-post.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +12,13 @@ export class ProdutoService {
     private produtoGetService: ProdutoGetService,
     private produtoDeleteService: ProdutoDeleteService,
     private produtoPutService: ProdutoPutService,
-    private produtoPostService: ProdutoPostService
   ) {}
 
   getProdutos() {
     return this.produtoGetService.getProdutos();
   }
 
-  deleteProduto(id: number) {
+  deleteProduto(id: string) {
     return this.produtoDeleteService.deleteProduto(id);
   }
 
@@ -28,7 +26,4 @@ export class ProdutoService {
     return this.produtoPutService.putProduto(produto);
   }
 
-  postProduto(produto: Produto) {
-    return this.produtoPostService.postProduto(produto);
-  }
 }
