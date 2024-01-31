@@ -35,7 +35,7 @@ export class FormRegistrarProdutoComponent {
     nome: new FormControl(this.estoque.produto.nome, [Validators.required, Validators.maxLength(100)]),
     codigoBarras: new FormControl(this.estoque.produto.codigoBarras, [Validators.required, Validators.maxLength(20)]),
     preco: new FormControl(this.estoque.produto.preco, [Validators.required, Validators.min(0), Validators.pattern('^[0-9]+([,.][0-9]{1,2})?$')]),
-    quantidade: new FormControl(this.estoque.quantidade, [Validators.required, Validators.min(0), Validators.max(10000000)])
+    quantidade: new FormControl(this.estoque.quantidade, [Validators.required, Validators.min(1), Validators.max(10000000)])
   });
   
   submit(){

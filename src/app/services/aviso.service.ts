@@ -21,7 +21,7 @@ export class AvisoService {
       showCancelButton: true,
       confirmButtonColor: '#0d6efd',
       cancelButtonColor: '#dc3545',
-      confirmButtonText: 'Sim, deletar',
+      confirmButtonText: 'Sim',
     });
   }
 }

@@ -34,20 +34,22 @@
     </div>
   </div>
 
-  
   <div class="mb-3">
     <label for="message-text" class="col-form-label">Quantidade*</label>
     <input type="text" placeholder="Digite a quantidade em estoque" class="form-control" id="recipient-quantidade" formControlName="quantidade"/>
     <div *ngIf="estoqueForm?.get('quantidade')?.hasError('required') && estoqueForm.get('quantidade')?.touched">
       {{ errorMessages.required }}
     </div>
-    <div *ngIf="estoqueForm.get('quantidade')?.hasError('maxlength') && estoqueForm.get('quantidade')?.touched">
+    <div *ngIf="estoqueForm.get('quantidade')?.hasError('max') && estoqueForm.get('quantidade')?.touched">
       {{ errorMessages.maxLength }}
+    </div>
+    <div *ngIf="estoqueForm.get('quantidade')?.hasError('min') && estoqueForm.get('quantidade')?.touched">
+      {{ errorMessages.min }}
     </div>
   </div>
 
   <div class="modal-footer">
     <button type="button" *ngIf="ativarBotao" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Fechar</button>
-    <button type="submit" class="btn btn-primary mt-3" [disabled]="!estoqueForm.valid">Cadastrar</button>
+    <button type="submit" class="btn btn-primary mt-3" data-bs-dismiss="modal" [disabled]="!estoqueForm.valid">Cadastrar</button>
   </div>
 </form>
